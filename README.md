@@ -8,7 +8,7 @@
 
 个人自建数据集，包含 10 种字体，每种字体 1000 个样本，共 10000 个样本。
 
-数据集下载链接：
+数据集下载链接：https://pan.baidu.com/s/1bE2N7AyGpEuYPDILAuem2A?pwd=6t7n
 
 模型文件下载链接：https://pan.baidu.com/s/1-CFPdk8A7AT6Sw2ByePHCg?pwd=i82x
 
