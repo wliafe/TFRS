@@ -1,0 +1,1 @@
+from .image_train import image_classification_train
