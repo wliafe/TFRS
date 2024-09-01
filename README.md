@@ -23,3 +23,7 @@ pip install -r requirements.txt
 1. 下载数据集并解压到 TFRS/data 目录下；
 2. 下载模型文件并解压到 TFRS/models 目录下；
 3. 运行 `python TFRS_predict.py`，即可开始预测。
+
+#### 开发进度
+
+2024.6.10 开发完成
