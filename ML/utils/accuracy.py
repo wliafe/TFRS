@@ -1,5 +1,6 @@
 import torch
 from torch import nn
+from tqdm import tqdm
 import ML
 
 
@@ -15,11 +16,14 @@ def evaluate_accuracy(net, data_iter, device):
         net.eval()
     metric = ML.Accumulator(2)
     with torch.no_grad():
-        for X, y in data_iter:
+        pbar = tqdm(data_iter, total=len(data_iter), desc="accuracy")
+        for X, y in pbar:
             if isinstance(X, list):
                 X = [x.to(device) for x in X]
             else:
                 X = X.to(device)
             y = y.to(device)
             metric.add(accuracy(net(X), y), y.numel())
+            pbar.set_postfix(accuracy=metric[0] / metric[1])
+            pbar.update(1)
     return metric[0] / metric[1]
