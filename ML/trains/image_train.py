@@ -40,5 +40,5 @@ def image_classification_train(net, train_iter, test_iter, num_epochs, lr, devic
             pbar.update(1)
         # 计算测试准确率
         test_acc = ML.evaluate_accuracy(net, test_iter, device)
-    print(f"loss {train_loss:.3f}, trains acc {train_acc:.3f}, tests acc {test_acc:.3f}")
+        print(f"loss {train_loss:.3f}, trains acc {train_acc:.3f}, tests acc {test_acc:.3f}")
     return train_loss, train_acc, test_acc
