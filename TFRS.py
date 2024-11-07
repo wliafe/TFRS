@@ -22,6 +22,6 @@ model_path = 'model/TFRS_model.pth'
 # 数据处理
 labels = ML.load_image_labels_data(train_path)
 net = models.resnet18(num_classes=len(labels))
-train_iter = ML.load_image_classification_data(train_path, train_transform, 70)
-test_iter = ML.load_image_classification_data(test_path, test_transform, 70)
+train_iter = ML.load_image_classification_data(train_path, train_transform, 50)
+test_iter = ML.load_image_classification_data(test_path, test_transform, 50)
 device = ML.try_gpu()
