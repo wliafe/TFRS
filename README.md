@@ -12,17 +12,10 @@
 
 模型文件下载链接：https://pan.baidu.com/s/1-CFPdk8A7AT6Sw2ByePHCg?pwd=i82x
 
-#### 安装依赖
-
-```
-pip install -r requirements.txt
-```
-
 #### 使用说明
 
 1. 下载数据集并解压到 TFRS/data 目录下；
 2. 下载模型文件并解压到 TFRS/models 目录下；
-3. 运行 `python TFRS_predict.py`，即可开始预测。
 
 #### 开发进度
 
