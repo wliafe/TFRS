@@ -25,5 +25,5 @@ def evaluate_accuracy(net, data_iter, device):
             y = y.to(device)
             metric.add(accuracy(net(X), y), y.numel())
             pbar.set_postfix(accuracy=metric[0] / metric[1])
-            pbar.update(1)
+        pbar.close()
     return metric[0] / metric[1]
