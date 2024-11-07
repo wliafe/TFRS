@@ -5,7 +5,7 @@ from pathlib import Path
 
 def load_image_classification_data(path, transform, batch_size):
     data = datasets.ImageFolder(path, transform=transform)
-    iters = DataLoader(data, batch_size=batch_size, shuffle=True, pin_memory=True)
+    iters = DataLoader(data, batch_size=batch_size, shuffle=True)
     return iters
 
 
