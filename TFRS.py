@@ -8,23 +8,6 @@ from tqdm import tqdm
 from d2l import torch as d2l
 
 
-# 定义类
-class Accumulator:
-    """在n个变量上累加"""
-
-    def __init__(self, n):
-        self.data = [0.0] * n
-
-    def add(self, *args):
-        self.data = [a + float(b) for a, b in zip(self.data, args)]
-
-    def reset(self):
-        self.data = [0.0] * len(self.data)
-
-    def __getitem__(self, idx):
-        return self.data[idx]
-
-
 # 数据获取
 def load_image_classification_data(path, transform, batch_size, num_workers=0, pin_memory=False):
     data = datasets.ImageFolder(path, transform=transform)
@@ -37,7 +20,7 @@ def load_image_classification_data(path, transform, batch_size, num_workers=0, p
 def evaluate_accuracy(net, data_iter, device):
     if isinstance(net, nn.Module):
         net.eval()
-    metric = Accumulator(2)
+    metric = d2l.Accumulator(2)
     with torch.no_grad():
         pbar = tqdm(data_iter, total=len(data_iter), desc="accuracy")
         for X, y in pbar:
@@ -71,7 +54,7 @@ def image_classification_train(net, train_iter, test_iter, num_epochs, lr, devic
     loss = nn.CrossEntropyLoss()
     for epoch in range(num_epochs):
         # 初始化训练损失，训练准确率，样本数
-        metric = Accumulator(3)
+        metric = d2l.Accumulator(3)
         net.train()
         pbar = tqdm(train_iter, total=len(train_iter), desc=f'epoch {epoch + 1}')
         for X, y in pbar:
