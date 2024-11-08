@@ -1,1 +1,0 @@
-from .image_test import image_classification_test
