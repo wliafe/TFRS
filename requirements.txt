@@ -1,0 +1,5 @@
+d2l==1.0.3
+torch==2.5.1
+torchvision==0.20.1
+tqdm==4.66.5
+flask==3.0.3
