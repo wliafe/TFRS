@@ -1,0 +1,109 @@
+[project]
+name = "tfrs"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "wliafe-mltools>=1.0.8",
+]
+
+[project.optional-dependencies]
+cu118 = [
+  "torch>=2.1.0",
+  "torchvision>=0.16.0",
+  "torchaudio>=2.1.0",
+]
+cu121 = [
+  "torch>=2.1.0,<2.6.0",
+  "torchvision>=0.16.0,<0.21.0",
+  "torchaudio>=2.1.0,<2.6.0",
+]
+cu124 = [
+  "torch>=2.4.0",
+  "torchvision>=0.19.0",
+  "torchaudio>=2.4.0",
+]
+cu126 = [
+  "torch>=2.6.0",
+  "torchvision>=0.21.0",
+  "torchaudio>=2.6.0",
+]
+cu128 = [
+  "torch>=2.7.0",
+  "torchvision>=0.22.0",
+  "torchaudio>=2.7.0",
+]
+cpu = [
+  "torch>=2.1.0",
+  "torchvision>=0.16.0",
+  "torchaudio>=2.1.0",
+]
+
+[tool.uv]
+conflicts = [
+  [
+    { extra = "cu118" },
+    { extra = "cu121" },
+    { extra = "cu124" },
+    { extra = "cu126" },
+    { extra = "cu128" },
+    { extra = "cpu" },
+  ],
+]
+
+[tool.uv.sources]
+torch = [
+  { index = "pytorch-cu118", extra = "cu118" },
+  { index = "pytorch-cu121", extra = "cu121" },
+  { index = "pytorch-cu124", extra = "cu124" },
+  { index = "pytorch-cu126", extra = "cu126" },
+  { index = "pytorch-cu128", extra = "cu128" },
+  { index = "pytorch-cpu", extra = "cpu" },
+]
+torchvision = [
+  { index = "pytorch-cu118", extra = "cu118" },
+  { index = "pytorch-cu121", extra = "cu121" },
+  { index = "pytorch-cu124", extra = "cu124" },
+  { index = "pytorch-cu126", extra = "cu126" },
+  { index = "pytorch-cu128", extra = "cu128" },
+  { index = "pytorch-cpu", extra = "cpu" },
+]
+torchaudio = [
+  { index = "pytorch-cu118", extra = "cu118" },
+  { index = "pytorch-cu121", extra = "cu121" },
+  { index = "pytorch-cu124", extra = "cu124" },
+  { index = "pytorch-cu126", extra = "cu126" },
+  { index = "pytorch-cu128", extra = "cu128" },
+  { index = "pytorch-cpu", extra = "cpu" },
+]
+
+[[tool.uv.index]]
+name = "pytorch-cu118"
+url = "https://download.pytorch.org/whl/cu118"
+explicit = true
+
+[[tool.uv.index]]
+name = "pytorch-cu121"
+url = "https://download.pytorch.org/whl/cu121"
+explicit = true
+
+[[tool.uv.index]]
+name = "pytorch-cu124"
+url = "https://download.pytorch.org/whl/cu124"
+explicit = true
+
+[[tool.uv.index]]
+name = "pytorch-cu126"
+url = "https://download.pytorch.org/whl/cu126"
+explicit = true
+
+[[tool.uv.index]]
+name = "pytorch-cu128"
+url = "https://download.pytorch.org/whl/cu128"
+explicit = true
+
+[[tool.uv.index]]
+name = "pytorch-cpu"
+url = "https://download.pytorch.org/whl/cpu"
+explicit = true
